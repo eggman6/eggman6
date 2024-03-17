@@ -13,6 +13,24 @@
   src: url(RobotoMono-Regular.ttf);
 }
 
+@font-face {
+  font-family: audible2;
+  src: url(AudibleSans-Rg.woff);
+}
+
+@font-face {
+  font-family: audible1;
+  src: url(AudibleSans-Lt.woff);
+}
+
+.audible {
+  font-family: audible2;
+}
+
+.taudible {
+  font-family: audible1;
+}
+
 .main-font {
   font-family: airfryer;
 }
