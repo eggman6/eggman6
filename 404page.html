@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="fonts.css" />
 
     <link rel="shortcut icon" type="image/png" href="com.airfryer.appx.svg" />
-    <title>Shopping Center</title>
+    <title>404</title>
   </head>
-  <body style="padding-left: 10px; padding-right: 10px">
+  <body
+    style="padding-left: 10px; padding-right: 10px"
+    class="microwave-orange"
+  >
     <br />
 
     <div
@@ -36,5 +39,18 @@
       >
     </div>
     <br />
+
+    <script>
+      if (window.location.href.indexOf("nobackbutton=true") != -1) {
+        document.getElementById("backbutton").remove();
+      }
+
+      document.getElementById("errormsg").innerHTML =
+        "The file: " +
+        '"' +
+        window.location.href +
+        '"' +
+        "<br>was not found on the Air Fryer Network";
+    </script>
   </body>
 </html>
