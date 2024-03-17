@@ -1,23 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-   
-    <title>TEST</title>
-</head>
-  <body class="microwave-orange">
+    <link rel="stylesheet" href="afx-css/700.css" />
+    <link rel="stylesheet" href="fonts.css" />
+
+    <link rel="shortcut icon" type="image/png" href="com.airfryer.appx.svg" />
+    <title>404</title>
+  </head>
+  <body
+    style="padding-left: 10px; padding-right: 10px"
+    class="microwave-orange"
+  >
     <br />
 
-    <h1>TEST</h1>
-    <br />
- 
-    <br /><a
-      href="https://github.com/imactuallyeggman/0/raw/main/pss.apk"
-      >Pokemon Sunstone<br />(com.goose.peroxide)</a
-    ><br /><br />
+    <div
+      style="
+        padding: 0.732em;
+        padding-top: 0.02em;
+        border-radius: 10px;
+        background-color: white;
+        max-width: 550px;
+      "
+    >
+      <h1>Error 404!</h1>
+      <t id="errormsg">rrrrrrrrrr</t><br />
+      <br />
+      "wow, such empty"<br />
+      -some bald guy probably <br />
 
+      <br /><a
+        style="text-decoration: none"
+        id="backbutton"
+        href="https://airfryerlive.com/"
+        ><h3>← back</h3></a
+      >
+    </div>
+    <br />
+
+    <script>
+      if (window.location.href.indexOf("nobackbutton=true") != -1) {
+        document.getElementById("backbutton").remove();
+      }
+
+      document.getElementById("errormsg").innerHTML =
+        "The file: " +
+        '"' +
+        window.location.href +
+        '"' +
+        "<br>was not found on the Air Fryer Network";
+    </script>
   </body>
 </html>

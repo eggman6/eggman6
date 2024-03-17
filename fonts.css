@@ -1,0 +1,26 @@
+@font-face {
+  font-family: airfryer;
+  src: url(airfryer2.otf);
+}
+
+@font-face {
+  font-family: rodinpro;
+  src: url(rodinpro.otf);
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(RobotoMono-Regular.ttf);
+}
+
+.main-font {
+  font-family: airfryer;
+}
+
+.casual-font {
+  font-family: rodinpro !important;
+}
+
+.classy-font {
+  font-family: roboto !important;
+}
