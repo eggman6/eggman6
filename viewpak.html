@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://scripts.sirv.com/sirv.nospin.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="afx-css/700.css" />
+    <link rel="stylesheet" href="fonts.css" />
+
+    <link rel="shortcut icon" type="image/png" href="com.airfryer.appx.svg" />
+    <title>Shopping Center</title>
+  </head>
+  <body style="padding-left: 10px; padding-right: 10px">
+    <br />
+    <h1 id="title" style="font-size: 400%" class="taudible">loading...</h1>
+
+    <br />
+    <div
+      style="
+        padding: 0.732em;
+        padding-top: 0.02em;
+        border-radius: 10px;
+        background-color: white;
+        max-width: 550px;
+      "
+    >
+      <br />
+      <img id="ico" src="appx/blank/icon2.png" height="60" />
+      <img
+        onerror="this.src='1x1transparent.png'"
+        id="ico2"
+        src="appx/blank/icon3.png"
+        height="60"
+      />
+
+      <h2 id="desc" class="audible">loading...</h2>
+      <i id="ratingtext" class="audible">For ages (number) and up</i>
+    </div>
+
+    <a
+      style="text-decoration: none"
+      id="downloadbtn"
+      download="download.apk"
+      href="appx/blank/app.apk"
+      ><h3
+        style="
+          border-radius: 4px;
+          border-width: 2px;
+          border-style: solid;
+          width: fit-content;
+          background-color: #8af08a;
+          border-color: #76ca76;
+        "
+      >
+        &#160;Download&#160;
+      </h3></a
+    >
+
+    <div
+      id="screenshotarea"
+      style="
+        padding: 0.732em;
+        padding-top: 0.02em;
+        border-radius: 10px;
+        background-color: white;
+        max-width: 550px;
+      "
+    >
+      <i class="audible"><br />Screen shots:</i><br />
+      <img
+        id="clip1"
+        onerror="document.getElementById('screenshotarea').style.display='none'"
+        src="appx/blank/clip1.jpg"
+        height="500"
+      /><br /><br />
+      <img
+        id="clip2"
+        onerror="this.style.display='none'"
+        src="appx/blank/clip2.jpg"
+        height="500"
+      /><br /><br />
+
+      <img
+        id="clip3"
+        onerror="this.style.display='none'"
+        src="appx/blank/clip3.jpg"
+        height="500"
+      /><br />
+    </div>
+
+    <script>
+      let params = new URLSearchParams(window.location.search);
+      pak = params.get("pak");
+
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        appdata = JSON.parse(this.responseText);
+
+        document.getElementById("desc").innerHTML = appdata.desc;
+        document.getElementById("title").innerHTML = appdata.name;
+        document.getElementById("ratingtext").innerHTML =
+          "For ages " + appdata.rating + " and up";
+
+        document.getElementById("clip1").src = "appx/" + pak + "/clip1.jpg";
+        document.getElementById("clip2").src = "appx/" + pak + "/clip2.jpg";
+        document.getElementById("clip3").src = "appx/" + pak + "/clip3.jpg";
+
+        document.getElementById("ico").src = "appx/" + pak + "/icon2.png";
+        document.getElementById("ico2").src = "appx/" + pak + "/icon3.png";
+
+        document.getElementById("downloadbtn").href =
+          "appx/" + pak + "/app.apk";
+      };
+      xhttp.open("GET", "appx/" + pak + "/index.json");
+      xhttp.send();
+    </script>
+  </body>
+</html>

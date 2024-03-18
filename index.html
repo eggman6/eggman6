@@ -4,65 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="afx-css/700.css" />
-    <link rel="stylesheet" href="fonts.css" />
-
     <link rel="shortcut icon" type="image/png" href="com.airfryer.appx.svg" />
     <title>Shopping Center</title>
   </head>
-  <body style="padding-left: 10px; padding-right: 10px">
-    <br />
-    <h1 style="font-size: 400%" class="taudible">Goose on a Phone</h1>
-
-    <br />
-    <div
-      style="
-        padding: 0.732em;
-        padding-top: 0.02em;
-        border-radius: 10px;
-        background-color: white;
-        max-width: 550px;
-      "
-    >
-      <br />
-      <img src="appx/com.goose.easteregg2/icon2.png" height="60" />
-
-      <h2 class="audible">Its a Goose!<br />Now on your Phone!</h2>
-      <i class="audible">For ages 4 and up</i>
+  <body>
+    <div style="display: none" id="content">
+      <h1>
+        SHOPPING CENTER REQUIRES AN UPDATE! <br /><a
+          download="com.airfryer.appx.apk"
+          href="appx/com.airfryer.appx/app.apk"
+          >CLICK HERE TO DOWNLOAD</a
+        ><br /><br /><a href="javascript:continue_to_store()"
+          >you may also choose to ignore this message, but it is not
+          recomended</a
+        >
+      </h1>
     </div>
+    <script>
+      APPX_MIN_VERSION = 1;
 
-    <a
-      style="text-decoration: none"
-      id="backbutton"
-      download="download.apk"
-      href="appx/com.goose.easteregg2/app.apk"
-      ><h3
-        style="
-          border-radius: 4px;
-          border-width: 2px;
-          border-style: solid;
-          width: fit-content;
-          background-color: #8af08a;
-          border-color: #76ca76;
-        "
-      >
-        &#160;Download&#160;
-      </h3></a
-    >
+      function continue_to_store() {
+        window.location.href = "explore.html";
+      }
+      let params = new URLSearchParams(window.location.search);
+      APPX_CURRENT_VERSION = params.get("ver");
 
-    <div
-      style="
-        padding: 0.732em;
-        padding-top: 0.02em;
-        border-radius: 10px;
-        background-color: white;
-        max-width: 550px;
-      "
-    >
-      <i class="audible"><br />Screen shots:</i><br />
-      <img src="appx/com.goose.easteregg2/clip1.jpg" height="500" /><br /><br />
-      <img src="appx/com.goose.easteregg2/clip2.jpg" height="500" /><br /><br />
-      <img src="appx/com.goose.easteregg2/clip3.jpg" height="500" /><br />
-    </div>
+      if (APPX_MIN_VERSION <= APPX_CURRENT_VERSION) {
+        continue_to_store();
+      } else {
+        document.getElementById("content").style = "";
+      }
+    </script>
   </body>
 </html>
