@@ -8,25 +8,43 @@
     <link rel="stylesheet" href="afx-css/700.css" />
     <link rel="stylesheet" href="fonts.css" />
 
+    <style>
+      iframe {
+        padding: 0.732em;
+        padding-top: 0.02em;
+        border-radius: 10px;
+        background-color: white;
+        max-width: 550px;
+        width: 100%;
+      }
+    </style>
     <link rel="shortcut icon" type="image/png" href="com.airfryer.appx.svg" />
     <title>Shopping Center</title>
   </head>
   <body style="padding-left: 10px; padding-right: 10px">
-    <a href="/viewpak.html?pak=com.goose.easteregg2">Goose On A Phone</a><br />
-    <a href="/viewpak.html?pak=com.airfryer.microwave"
-      >MicrowaveServiceProvider</a
-    ><br />
-    <a href="/viewpak.html?pak=com.goose.peroxide">Sunstone</a><br />
-    <a href="/viewpak.html?pak=citra">citra</a><br />
-    <a href="/viewpak.html?pak=yuzu">yuzu</a><br />
-    <a href="/viewpak.html?pak=com.airfryer.pinball.divisor">Pug-a-Ball 2</a
-    ><br />
-    <a href="/viewpak.html?pak=com.android.phasebeam">com.android.phasebeam</a
-    ><br />
-    <a href="/viewpak.html?pak=com.android.galaxy4">com.android.galaxy4</a
-    ><br />
-    <a href="/viewpak.html?pak=com.android.magicsmoke">com.android.magicsmoke</a
-    ><br />
-    <a href="/viewpak.html?pak=jp.unico.box_puzzle">Miniature Garden</a><br />
+    <br />
+
+    <script>
+      appcount = 11;
+      let params = new URLSearchParams(window.location.search);
+      pak = params.get("pak");
+      function addframe() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          appdata = JSON.parse(this.responseText);
+
+          randomapp = appdata[Math.floor(Math.random() * appcount)];
+          document.body.innerHTML += `<iframe scrolling="no" src="app_panel.html?pak=${randomapp}" frameborder="0" ></iframe ><br />`;
+        };
+        xhttp.open("GET", "appx/applist.json");
+        xhttp.send();
+      }
+      addframe();
+      addframe();
+      addframe();
+      addframe();
+      addframe();
+      addframe();
+    </script>
   </body>
 </html>
