@@ -1,4 +1,7 @@
 /* airfryer standarized coloring codes */
+a {
+  text-decoration: none;
+}
 
 ::-webkit-scrollbar {
   width: 5px;
