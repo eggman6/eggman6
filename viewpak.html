@@ -93,9 +93,6 @@
       let params = new URLSearchParams(window.location.search);
       pak = params.get("pak");
 
-      if ((pak = "undefined")) {
-        window.location.href = "404page.html";
-      }
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function () {
         appdata = JSON.parse(this.responseText);
