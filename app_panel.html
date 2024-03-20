@@ -11,22 +11,21 @@
     <link rel="shortcut icon" type="image/png" href="com.airfryer.appx.svg" />
     <title>Shopping Center</title>
   </head>
-  <body
-    onload="loadfinish()"
-    style="padding-left: 10px; padding-right: 10px"
-  ><a href="javascript:viewinf()">
-    <div>
-      <br />
-      <img id="ico" src="appx/blank/icon2.png" height="60" />
-      <img
-        onerror="this.src='1x1transparent.png'"
-        id="ico2"
-        src="appx/blank/icon3.png"
-        height="60"
-      />
-
-      <h2 id="title" class="audible">loading...</h2>
-    </div>
+  <body onload="loadfinish()" style="padding-left: 10px; padding-right: 10px">
+    <a style="text-decoration: none" href="javascript:viewinf()">
+      <div>
+        <br />
+        <img id="ico" src="appx/blank/icon2.png" height="60" />
+        <img
+          onerror="this.src='1x1transparent.png'"
+          id="ico2"
+          src="appx/blank/icon3.png"
+          height="60"
+        />
+        <h2 id="title" class="audible">loading...</h2>
+        View Info →
+      </div>
+    </a>
 
     <script>
       let params = new URLSearchParams(window.location.search);
