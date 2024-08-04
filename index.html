@@ -33,6 +33,10 @@
       let params = new URLSearchParams(window.location.search);
       APPX_CURRENT_VERSION = params.get("ver");
 
+      if ( APPX_CURRENT_VERSION == null ) {
+        window.close();
+      }
+
       if (APPX_MIN_VERSION <= APPX_CURRENT_VERSION) {
         continue_to_store();
       } else {
